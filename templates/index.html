@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Crypto maison</title></head>
+<body>
+  <h2>Générateur de token (XOR)</h2>
+  <form method="POST">
+    <input type="text" name="username" placeholder="Nom d'utilisateur">
+    <input type="submit" name="get_token" value="Générer token">
+  </form>
+
+  <h2>Soumettre un token</h2>
+  <form method="POST">
+    <input type="text" name="token" placeholder="Coller le token">
+    <input type="submit" name="submit_token" value="Envoyer">
+  </form>
+
+  {% if token %}
+    <p><strong>Token généré :</strong> {{ token }}</p>
+  {% endif %}
+  
+  {% if decrypted %}
+    <p><strong>Déchiffré :</strong> {{ decrypted }}</p>
+  {% endif %}
+
+  {% if message %}
+    <p><strong>{{ message }}</strong></p>
+  {% endif %}
+</body>
+</html>
